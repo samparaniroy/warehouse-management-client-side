@@ -1,0 +1,25 @@
+.header-area {
+	padding: 10px 0;
+    height: 80px;
+	background-color: black;
+}
+.logo-area a {
+	color: #fff;
+	font-size: 40px;
+	font-family: "Akronim",cursive;
+	text-decoration: none;
+}
+.menuber-area ul {
+	display: flex;
+    list-style: none;
+    padding: 15px;
+    justify-content: center;
+}
+.menuber-area ul li {
+	margin-left: 30px;
+}
+.menuber-area ul li a {
+	color: #fff;
+	font-size: 16px;
+	text-decoration: none !important;
+}
