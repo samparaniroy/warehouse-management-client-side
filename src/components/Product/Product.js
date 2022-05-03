@@ -13,7 +13,7 @@ const Product = (props) => {
                 <p><small>Price:$ {price}</small></p>
                 <p><span>Quantity:{quantity}</span></p>
                 <h3>suppliername:{suppliername}</h3>
-                <div>
+                <div className='update-button'>
                     <Link to='inventory'><button>Update</button></Link>
                 </div>
             </div>

@@ -9,3 +9,22 @@
     margin-bottom: 40px;
     border-radius: 10px;
 }
+.product-item h2 {
+	padding: 30px 20px;
+}
+.product-item p {
+	padding-left: 20px;
+	font-size: 17px;
+}
+.product-item h3 {
+	padding-left: 20px;
+}
+.update-button {
+	padding: 20px;
+}
+.update-button button {
+	background: bisque;
+	padding: 15px 157px;
+    border: 0;
+    border-radius: 5px;
+}
