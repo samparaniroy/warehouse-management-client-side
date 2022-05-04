@@ -1,21 +1,26 @@
 import React, { useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import './Login.css'
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { async } from '@firebase/util';
 
 const Login = () => {
     const [
         signInWithEmailAndPassword,
         user,
-      ] = useSignInWithEmailAndPassword(auth); 
+        loading,
+        error,
+      ] = useSignInWithEmailAndPassword(auth);
+      const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
+    let errorElement;
 
     const handleSubmit = event =>{
         event.preventDefault();
@@ -26,6 +31,16 @@ const Login = () => {
     const navigateRegister = event =>{
         navigate('/register')
     }
+    const resetPassword = async() =>{
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+          alert('Sent email');
+    }
+
+    if (error) {
+        errorElement=<p className='text-danger'>Error: {error.message}</p>
+      }
+
     if(user){
         navigate(from, { replace: true });
     }
@@ -40,7 +55,9 @@ const Login = () => {
                 <br/>
                 <input className='submit-button' type="submit" value="login" />
             </form>
+            {errorElement}
             <p>If You Haven't Account Yet? <Link to='/register' className='' onClick={navigateRegister}>Please Register</Link></p>
+            <p>Forget Password? <Link to='/register' className='' onClick={resetPassword}>Reset Password</Link></p>
             <SocialLogin></SocialLogin>
         </div>
     );

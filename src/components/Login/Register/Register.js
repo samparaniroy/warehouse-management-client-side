@@ -1,8 +1,10 @@
 import React, { useRef } from 'react';
 import './Register.css'
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
+import { async } from '@firebase/util';
 
 const Register = () => {
     const [
@@ -10,21 +12,25 @@ const Register = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification:true});
+      const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const navigate = useNavigate();
 
     const navigateLogin = event =>{
         navigate('/login')
     }
     if(user){
-        navigate('/')
+        console.log('user', user)
     }
-    const handleSubmit = event =>{
+    const handleSubmit = async (event) =>{
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        createUserWithEmailAndPassword(email, password)
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName:name });
+         console.log('Updated profile');
+         navigate('/')
     }
     return (
         <div className='register-area'>
@@ -39,6 +45,7 @@ const Register = () => {
                 <input className='submit-button' type="submit" value="register" />
             </form>
             <p>Already have an Account? <Link to='/login' onClick={navigateLogin}>Please Login</Link></p>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };
