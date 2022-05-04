@@ -1,19 +1,33 @@
 import React, { useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import './Login.css'
+import auth from '../../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
+    const [
+        signInWithEmailAndPassword,
+        user,
+      ] = useSignInWithEmailAndPassword(auth); 
+
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
 
     const handleSubmit = event =>{
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
+        signInWithEmailAndPassword(email, password)
     }
     const navigateRegister = event =>{
         navigate('/register')
+    }
+    if(user){
+        navigate(from, { replace: true });
     }
     
     return (
@@ -22,11 +36,12 @@ const Login = () => {
             <form onSubmit={handleSubmit}>
                 <input ref={emailRef} type="text" name="email" placeholder='email' required/>
                 <br/>
-                <input type="password" name="password" id="" placeholder='password' required/>
+                <input ref={passwordRef} type="password" name="password" id="" placeholder='password' required/>
                 <br/>
-                <input ref={passwordRef} className='submit-button' type="submit" value="login" />
+                <input className='submit-button' type="submit" value="login" />
             </form>
             <p>If You Haven't Account Yet? <Link to='/register' className='' onClick={navigateRegister}>Please Register</Link></p>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };

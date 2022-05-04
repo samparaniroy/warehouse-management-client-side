@@ -1,0 +1,21 @@
+.register-area {
+	box-shadow: 0 7px 29px 0 rgba(100,100,111,.2);
+	max-width: 490px;
+	padding: 30px;
+	margin: 90px auto;
+}
+.register-area form input {
+	width: 100%;
+	margin-bottom: 15px;
+	height: 48px;
+	padding: 0 15px;
+	border-radius: 5px;
+	border: 1px solid #0b114a;
+}
+.register-area h1 {
+	text-align: center;
+	padding-bottom: 15px;
+}
+.register-area .submit-button {
+	background: #0b114a;
+}

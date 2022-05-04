@@ -1,8 +1,15 @@
 import React from 'react';
+import {signOut} from 'firebase/auth';
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import './Navber.css';
+import auth from '../../firebase.init';
 
 const Navber = () => {
+    const [user] = useAuthState(auth)
+    const handleSignOut = () =>{
+        signOut(auth)
+    }
     return (
         <div>
             <div className="header-area">
@@ -18,8 +25,15 @@ const Navber = () => {
                                 <ul>
                                     <li><Link to='/'>Home</Link></li>
                                     <li><Link to='/blogs'>Blogs</Link></li>
-                                    <li><Link to='/login'>Login</Link></li>
-                                    <li><Link to='/register'>Register</Link></li>
+                                    {
+                                        user ?
+                                        <button onClick={handleSignOut}>Sign Out</button> 
+                                        :
+                                        <div>
+                                            <li><Link to='/login'>Login</Link></li>
+                                            <li><Link to='/register'>Register</Link></li>
+                                        </div>
+                                    }
                                 </ul>
                             </div>
                         </div>
