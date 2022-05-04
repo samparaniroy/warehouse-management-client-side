@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import './Register.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
-import { async } from '@firebase/util';
+import Loading from '../../Loading/Loading';
 
 const Register = () => {
     const [
@@ -14,7 +14,11 @@ const Register = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification:true});
       const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
     const navigate = useNavigate();
+    if(loading){
+        return<Loading></Loading>
+     }
 
     const navigateLogin = event =>{
         navigate('/login')

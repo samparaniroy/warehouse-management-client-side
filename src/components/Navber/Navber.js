@@ -27,9 +27,9 @@ const Navber = () => {
                                     <li><Link to='/blogs'>Blogs</Link></li>
                                     {
                                         user ?
-                                        <button onClick={handleSignOut}>Sign Out</button> 
+                                        <button className='sign-out' onClick={handleSignOut}>Sign Out</button> 
                                         :
-                                        <div>
+                                        <div className='d-flex'>
                                             <li><Link to='/login'>Login</Link></li>
                                             <li><Link to='/register'>Register</Link></li>
                                         </div>
