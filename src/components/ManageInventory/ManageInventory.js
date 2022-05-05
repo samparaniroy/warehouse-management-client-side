@@ -46,6 +46,7 @@ const ManageInventory = () => {
                                 <tr>
                                 <td><img src={product.image} alt="" /></td>
                                 <td>{product.name}</td>
+                                <td>{product.description}</td>
                                 <td>{product.price}</td>
                                 <td><button className='btn btn-danger' onClick={() => handleDelete(product._id)}>delete</button></td>
                                 </tr>)}

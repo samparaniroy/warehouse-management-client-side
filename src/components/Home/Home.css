@@ -7,3 +7,20 @@
 	color: cadetblue;
 	font-size: 50px;
 }
+.bikes-area {
+	padding: 60px;
+}
+.bikes-title {
+	text-align: center;
+}
+.bikes-title h1 {
+	padding-bottom: 10px;
+}
+.bikes-title p {
+	font-size: 20px;
+	color: #E76F51;
+}
+.bikes-image {
+	padding: 20px;
+	filter: grayscale();
+}

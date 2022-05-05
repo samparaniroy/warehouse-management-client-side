@@ -28,7 +28,7 @@ const Navber = () => {
                                     {
                                         user && <>
                                           <li><Link to='/manageitem'>Manage Item</Link></li>
-                                          <li><Link to='/additem'>Add Item</Link></li>
+                                          <li><Link to='/addnewitem'>Add Item</Link></li>
                                           <li><Link to='/myitems'>My Items</Link></li>
                                         </>
                                     }

@@ -21,6 +21,33 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <div className="bikes-area">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="bikes-title">
+                                <h1>Fetured Bikes 2021</h1>
+                                <p>Best bike collection</p>
+                            </div>
+                        </div>
+                        <div className="col-lg-4">
+                            <div className="bikes-image">
+                                <img src="images/hondra1.png" alt="" />
+                            </div>
+                        </div>
+                        <div className="col-lg-4">
+                            <div className="bikes-image">
+                                <img src="images/hondra2.png" alt="" />
+                            </div>
+                        </div>
+                        <div className="col-lg-4">
+                            <div className="bikes-image">
+                                <img src="images/hondra3.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

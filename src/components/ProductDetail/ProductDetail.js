@@ -23,6 +23,7 @@ const ProductDetail = () => {
                             <p><small>Price:$ {product.price}</small></p>
                             <p><span>Quantity: {product.quantity}</span></p>
                             <h3>SupplierName: {product.suppliername}</h3>
+                            <button>Delivered</button>
                         </div>
                     </div>
                     <div className="col-lg-4">
