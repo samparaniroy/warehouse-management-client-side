@@ -16,7 +16,7 @@ const ManageInventory = () => {
                 <div className="row">
                     <div className="product-form">
                         <h1>Manage Inventory</h1>
-                        <table class="table">
+                        <table className="table">
                             <thead>
                                 <tr>
                                 <th scope="col">Product Image</th>

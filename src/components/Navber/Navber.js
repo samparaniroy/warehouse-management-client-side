@@ -26,6 +26,13 @@ const Navber = () => {
                                     <li><Link to='/'>Home</Link></li>
                                     <li><Link to='/blogs'>Blogs</Link></li>
                                     {
+                                        user && <>
+                                          <li><Link to='/manageitem'>Manage Item</Link></li>
+                                          <li><Link to='/additem'>Add Item</Link></li>
+                                          <li><Link to='/myitems'>My Items</Link></li>
+                                        </>
+                                    }
+                                    {
                                         user ?
                                         <button className='sign-out' onClick={handleSignOut}>Sign Out</button> 
                                         :
