@@ -5,6 +5,21 @@ import './ManageInventory.css'
 
 const ManageInventory = () => {
     const [products, setProducts] = Products([]);
+    const handleDelete = id =>{
+        const proceed = window.confirm('Are you sure');
+        if(proceed){
+            const url = `http://localhost:5000/product/${id}`;
+            fetch(url, {
+                method:'DELETE'
+            })
+            .then(res => res.json())
+            .then(data =>{
+                console.log(data)
+                const remaining = products.filter(product => product._id !== id);
+                setProducts(remaining)
+            })
+        }
+    }
     return (
         <div className='manage-area'>
             <div className="container">
@@ -32,7 +47,7 @@ const ManageInventory = () => {
                                 <td><img src={product.image} alt="" /></td>
                                 <td>{product.name}</td>
                                 <td>{product.price}</td>
-                                <td><button className='btn btn-danger'>delete</button></td>
+                                <td><button className='btn btn-danger' onClick={() => handleDelete(product._id)}>delete</button></td>
                                 </tr>)}
                             </tbody>
                         </table>
