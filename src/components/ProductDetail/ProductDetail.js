@@ -23,13 +23,15 @@ const ProductDetail = () => {
                             <p><small>Price:$ {product.price}</small></p>
                             <p><span>Quantity: {product.quantity}</span></p>
                             <h3>SupplierName: {product.suppliername}</h3>
-                            <button>Delivered</button>
+                            <div className='button-area'>
+                               <button className='btn btn-primary'>Delivered</button>
+                            </div>
                         </div>
                     </div>
                     <div className="col-lg-4">
-                    <div className='text-center py-20'>
-                        <Link to='/inventory'><button className='btn btn-primary w-50'> Manage Inventories</button></Link>
-                    </div>
+                        <div className='text-center py-20'>
+                            <Link to='/inventory'><button className='btn btn-primary w-50'> Manage Inventories</button></Link>
+                        </div>
                     </div>
                 </div>
             </div>
