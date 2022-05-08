@@ -9,7 +9,7 @@ const AddNewItem = () => {
     const [user] = useAuthState(auth);
     const onSubmit = data => {
         console.log(data)
-        const url = `http://localhost:5000/product`;
+        const url = `https://hidden-atoll-75134.herokuapp.com/product`;
         fetch(url,{
             method:'POST',
             headers:{

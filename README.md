@@ -1,5 +1,5 @@
 # Warehouse Management
-#live site link
+#live site link(https://delicate-pithivier-e15570.netlify.app/)
 
 1.This Website Motor Bike Website.
 2.Used Firebase Authentication System.

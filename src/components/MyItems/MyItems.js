@@ -7,7 +7,7 @@ const MyItems = () => {
     const [items,setItems] = useState([]);
     const [user] = useAuthState(auth);
     useEffect(()=>{
-        fetch(`http://localhost:5000/myitems?email=${user.email}`)
+        fetch(`https://hidden-atoll-75134.herokuapp.com/myitems?email=${user.email}`)
         .then(res => res.json())
         .then(data => setItems(data))
     },[])
@@ -15,7 +15,7 @@ const MyItems = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('Are you sure');
         if(proceed){
-            const url = `http://localhost:5000/myitems/${id}`;
+            const url = `https://hidden-atoll-75134.herokuapp.com/myitems/${id}`;
             fetch(url, {
                 method:'DELETE'
             })
