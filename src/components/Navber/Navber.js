@@ -25,6 +25,7 @@ const Navber = () => {
                                 <ul>
                                     <li><Link to='/'>Home</Link></li>
                                     <li><Link to='/blogs'>Blogs</Link></li>
+                                    <li><Link to='*'>NotFound</Link></li>
                                     {
                                         user && <>
                                           <li><Link to='/inventory'>Manage Item</Link></li>

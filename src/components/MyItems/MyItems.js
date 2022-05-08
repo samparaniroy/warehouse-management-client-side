@@ -23,14 +23,14 @@ const MyItems = () => {
             .then(data =>{
                 console.log(data)
                 const remaining = items.filter(item => item._id !== id);
-                setItems(remaining)
+                setItems(remaining);
             })
         }
     }
     return (
         <div className='items-area'>
             <div className='items-form'>
-                <table class="table">
+                <table class="table table-bordered table-striped table-responsive">
                     <thead>
                         <tr>
                         <th scope='col'>Product Image</th>

@@ -100,4 +100,12 @@
 	.w-50 {
 		width: 95% !important;
 	}
+	.manage-area {
+		padding: 70px 10px;
+		overflow-x: scroll;
+	}
+	.items-area {
+		padding: 70px 10px;
+		overflow-x: scroll;
+	}
 }
