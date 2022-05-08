@@ -1,5 +1,6 @@
 # Warehouse Management
 #live site link
+
 1.Home page products are missing from the mongodb database.
 2.Clicking the update button has lost its details.
 3.Adding product to management inventory is lost.
