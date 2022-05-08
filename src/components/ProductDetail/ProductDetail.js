@@ -24,7 +24,13 @@ const ProductDetail = () => {
                             <p><span>Quantity: {product.quantity}</span></p>
                             <h3>SupplierName: {product.suppliername}</h3>
                             <div className='button-area'>
-                               <button className='btn btn-primary'>Delivered</button>
+                               <button  className='btn btn-primary'>Delivered</button>
+                            </div>
+                            <div>
+                                <form className='pb-5 px-2 pt-5'>
+                                    <input className='w-50' type="text" name='quantity' placeholder='Restock the Quantity' />
+                                    <input type="submit" value="add" />
+                                </form>
                             </div>
                         </div>
                     </div>
