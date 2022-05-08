@@ -11,42 +11,26 @@ const ProductDetail = () => {
         .then(res => res.json())
         .then(data => setProduct(data))
     }, []);
-
     // const hangleQuantityupdate = event =>{
     //     event.preventDefault();
-    //     const quantity = parseFloat(event.target.quantity.value);
-    //     const totalquantity = parseFloat(product.quantity);
-    //     const total = totalquantity - quantity;
-    //     if(total < 0){
-    //         const displayQuantity = document.getElementById('quantity');
-    //         const sold = 'sold';
-    //         displayQuantity.innerText = sold;
-    //     }
-    //     else if (total < 0){
-    //         console.log('');
-    //     }
-
+    //     const quantitys = parseFloat(event.target.quantity.value);
+    //     const Quantitys = parseFloat(product.quantity);
+    //     const total = Quantitys + quantitys;
+    //     const updatequantity= {total}
+    //     const url = `http://localhost:5000/product/${productId}`;
+    //     fetch(url,{
+    //         method: "PUT",
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(updatequantity),
+    //     })
+    //     .then(res => res.json())
+    //         .then(data =>{
+    //             console.log(data)
+    //             event.target.reset()
+    //         })
     // }
-    const hangleQuantityupdate = event =>{
-        event.preventDefault();
-        const quantitys = parseFloat(event.target.quantity.value);
-        const Quantitys = parseFloat(product.quantity);
-        const total = Quantitys + quantitys;
-        const totalquantity = {total}
-        const url = `http://localhost:5000/product/6271060f071f6d99f35f1f12`;
-        fetch(url,{
-            method: "PUT",
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(totalquantity),
-        })
-        .then(res => res.json())
-            .then(data =>{
-                console.log(data)
-                event.target.reset()
-            })
-    }
     return (
         <div className='productDetail-area'>
             <div className="container">
@@ -66,7 +50,7 @@ const ProductDetail = () => {
                                <button  className='btn btn-primary'>Delivered</button>
                             </div>
                             <div>
-                                <form className='pb-5 px-2 pt-5' onSubmit={hangleQuantityupdate}>
+                                <form className='pb-5 px-2 pt-5'>
                                     <input className='w-50' type="text" name='quantity' placeholder='Restock the Quantity' />
                                     <input type="submit" value="add" />
                                 </form>
