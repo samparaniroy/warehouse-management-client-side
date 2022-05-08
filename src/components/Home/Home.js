@@ -21,6 +21,25 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <div className="hondra-area">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-6">
+                            <div className="hondra-content">
+                                <h5>Computer-controlled digital transistorized with electronic advance</h5>
+                                <h1>Honda CBR 300R</h1>
+                                <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                <a href="#">Purchase</a>
+                            </div>
+                        </div>
+                        <div className="col-lg-6">
+                            <div className="hondra-image">
+                                <img src="images/hondra.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className="bikes-area">
                 <div className="container">
                     <div className="row">

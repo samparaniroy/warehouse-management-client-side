@@ -7,6 +7,35 @@
 	color: cadetblue;
 	font-size: 50px;
 }
+.hondra-area {
+	padding: 60px;
+	background-color: #264653;
+}
+.hondra-content h5 {
+	color: #fff;
+	font-size: 18px;
+	padding-bottom: 20px;
+}
+.hondra-content h1 {
+	color: #fff;
+	font-size: 40px;
+	padding-bottom: 20px;
+}
+.hondra-content p {
+	color: #fff;
+	font-size: 16px;
+	padding-bottom: 20px;
+}
+.hondra-content a {
+	background: #E76F51;
+	padding: 15px 40px;
+	color: #fff;
+	font-size: 20px;
+	text-decoration: none;
+}
+.hondra-image img {
+	width: 100%;
+}
 .bikes-area {
 	padding: 60px;
 }
@@ -23,4 +52,52 @@
 .bikes-image {
 	padding: 20px;
 	filter: grayscale();
+}
+
+@media all and (max-width: 575px){
+	.products-title h1 {
+		font-size: 35px;
+	}
+	.products-area {
+		padding: 20px 5px;
+	}
+	.update-button button {
+		padding: 15px 120px;
+	}
+	.hondra-area {
+		padding-left: 10px;
+	}
+	.bikes-area {
+		padding: 40px 0;
+	}
+	.hondra-content h5 {
+		font-size: 13px;
+	}
+	.hondra-content h1 {
+		font-size: 33px;
+	}
+	.hondra-content p {
+		font-size: 11px;
+	}
+	.hondra-image img {
+		padding-top: 50px;
+	}
+	.blogs-area {
+		padding: 60px 0;
+	}
+	.blogs-content p {
+		padding-bottom: 20px;
+	}
+	.productDetail-item {
+		margin-bottom: 20px;
+	}
+	.menuber-area ul li {
+		margin-left: 10px;
+	}
+	.text-center {
+		font-size: 25px;
+	}
+	.w-50 {
+		width: 95% !important;
+	}
 }
