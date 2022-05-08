@@ -1,5 +1,5 @@
 .header-area {
-	padding: 10px 0;
+	padding: 20px 0;
 	background-color: #151320;
 }
 .logo-area a {
@@ -10,9 +10,10 @@
 }
 .menuber-area ul {
 	display: flex;
-    list-style: none;
-    padding: 15px;
-    justify-content: flex-end;
+	list-style: none;
+	padding: 15px;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 .menuber-area ul li {
 	margin-left: 20px;

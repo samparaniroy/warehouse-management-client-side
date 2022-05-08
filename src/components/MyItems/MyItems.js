@@ -34,8 +34,6 @@ const MyItems = () => {
                     <thead>
                         <tr>
                         <th scope='col'>Product Image</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
                         <th scope="col">Products Name</th>
                         <th scope="col">Price</th>
                         <th scope="col">product Delete</th>
@@ -48,7 +46,6 @@ const MyItems = () => {
                             <tr key={item._id}>
                             <td><img src={item.image} alt="" /></td>    
                             <td>{item.name}</td>
-                            <td>{item.email}</td>
                             <td>{item.price}</td>
                             <td><button className='btn btn-danger' onClick={() => handleDelete(item._id)}>delete</button></td>
                             </tr>):

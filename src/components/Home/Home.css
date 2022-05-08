@@ -33,6 +33,9 @@
 	font-size: 20px;
 	text-decoration: none;
 }
+.hondra-area .row {
+	align-items: center;
+}
 .hondra-image img {
 	width: 100%;
 }
@@ -91,9 +94,6 @@
 	.productDetail-item {
 		margin-bottom: 20px;
 	}
-	.menuber-area ul li {
-		margin-left: 10px;
-	}
 	.text-center {
 		font-size: 25px;
 	}
@@ -102,6 +102,8 @@
 	}
 	.manage-area {
 		padding: 70px 10px;
+	}
+	th nth-child {
 		overflow-x: scroll;
 	}
 	.items-area {
